@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 class LoginTests():
 
@@ -18,6 +19,8 @@ class LoginTests():
 
         passwordField = driver.find_element(By.ID, "user_password")
         passwordField.send_keys("abcabc")
+
+	time.sleep(2)
 
         loginButton = driver.find_element(By.NAME, "commit")
         loginButton.click()
