@@ -12,7 +12,7 @@ class LoginTests(unittest.TestCase):
 
     @pytest.mark.run(order=2)
     def test_validLogin(self):
-	self.lp.clearLoginFields()
+	self.driver.get(self.baseURL)
         self.lp.login("test@email.com", "abcabc")
         result = self.lp.verifyLoginSuccessful()
         assert result == True
